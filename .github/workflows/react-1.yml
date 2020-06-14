@@ -20,15 +20,15 @@ jobs:
 
     # Runs a single command using the runners shell
     - name: Install nodeJs
-      uses: actions/setup-node@v2-beta
+      uses: actions/setup-node@v1.4.2
       with: 
         node-version: 12
-    - uses: borales/actions-yarn@v2.0.0 
+    - name: github action for yarn
+    - uses: borales/actions-yarn@v2.3.0 
+      # yarn command
       with: 
         cmd: install 
-    - name: Build react app 
-      run: yarn build
     - name: Install Surge
       run: npm install -g surge 
-    - name:  Run surge
+    - name:  deploying on surge
       run: surge ./ build shary-1.surge.sh --token ${{ secrets.SHARY_SECRET }}
