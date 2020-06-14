@@ -31,4 +31,4 @@ jobs:
     - name: Install Surge
       run: npm install -g surge 
     - name:  Run surge
-      run: surge ./ build shary-1.surge.sh --token ${{ secrets.SHARYAR_SECRET }}
+      run: surge ./ build shary-1.surge.sh --token ${{ secrets.SHARY_SECRET }}
